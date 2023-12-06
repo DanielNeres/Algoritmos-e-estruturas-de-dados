@@ -1,11 +1,11 @@
-void  incrementa(int num){
+#include <stdio.h>
+int incrementa(int num){
 return ++num;
 }
 int main(void){
 int num = 5;
 
-num = inc(num);
+num = incrementa(num);
 
 printf("%d", num);
 return 0;
-}
