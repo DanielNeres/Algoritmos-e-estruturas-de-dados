@@ -1,21 +1,24 @@
-int soma(int a, int b){
+#include <stdio.h>
+float soma(int a, int b){
 return a + b;
 }
-int subtracao(int a, int b){
+float subtracao(int a, int b){
 return a - b;
 }
-int produto(int a, int b){
+float produto(int a, int b){
 return a * b;
 }
+float divisao(int a, int b){
+return a / b;
+}
 
-
-int calcula(int\ x, int y, int (*operacao)(int, int)){
+float calcula(int x, int y, float (*operacao)(int, int)){
 return (*operacao)(x, y);
 }
 
 int main(){
-int resultado  = calcula (5, 3, soma);
+float resultado = calcula(5, 2, divisao);
 
-printf("resultado: %d", resultado);
+printf("resultado: %.2f", resultado);
 return 0;
 }
