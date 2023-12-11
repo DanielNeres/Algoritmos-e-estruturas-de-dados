@@ -29,7 +29,7 @@ void preencher(struct professor *profs){
     printf("digite a idade\n");
     scanf("%d", &(*profs).idade);
     printf("digite a disciplina\n");
-    scanf(" %[^\n]", &(*profs).disciplina);
+    scanf(" %[^\n]", (*profs).disciplina);
     printf("digite o email\n");
     scanf(" %[^\n]", (*profs).email_institucional);
 }
