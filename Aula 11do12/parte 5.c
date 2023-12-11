@@ -5,13 +5,12 @@ char nome[20];
 int idade;
 int mat;
 char email[50];
-}aluno;
-
-void preencher(aluno *estudante);
-void imprimir(aluno *estudante);
+} aluno;
+void preencher(struct aluno *estudante);
+void imprimir(struct aluno *estudante);
 
 int main(){
-    aluno * estudante = (aluno*) malloc(sizeof(aluno));
+    struct aluno * estudante = (struct aluno*) malloc(sizeof(struct aluno));
     if(estudante == NULL){
         exit(1);
     }
@@ -21,7 +20,7 @@ int main(){
     return 0;
 }
 
-void preencher(aluno *estudante){
+void preencher(struct aluno *estudante){
     printf("%d\n", (*estudante).mat);
     printf("digite o nome do estudante\n");
     scanf("%[^\n]", (*estudante).nome);
@@ -32,6 +31,6 @@ void preencher(aluno *estudante){
     printf("digite o email do estudante\n");
     scanf(" %[^\n]", (*estudante).email);
 }
-void imprimir(aluno *estudante){
+void imprimir(struct aluno *estudante){
     printf(" nome: %s\n idade: %d\n matricula: %d\n email: %s\n", (*estudante).nome, (*estudante).idade, (*estudante).mat, (*estudante).email );
 }
