@@ -1,36 +1,36 @@
 #include<stdio.h>
 #include<stdlib.h>
-typedef struct aluno{
+typedef struct SVpublico{
 char nome[20];
 int idade;
-int mat;
-char email[50];
-} aluno;
-void preencher(struct aluno *estudante);
-void imprimir(struct aluno *estudante);
+int RG;
+char funcao[30];
+} SVpublico;
+
+void preencher(SVpublico *Leandros);
+void imprimir(SVpublico *Leandros);
 
 int main(){
-    struct aluno * estudante = (struct aluno*) malloc(sizeof(struct aluno));
-    if(estudante == NULL){
+    SVpublico * Leandros = (SVpublico*) malloc(sizeof(SVpublico));
+    if(Leandros == NULL){
         exit(1);
     }
-    preencher(estudante);
-    imprimir(estudante);
-    free(estudante);
+    preencher(Leandros);
+    imprimir(Leandros);
+    free(Leandros);
     return 0;
 }
 
-void preencher(struct aluno *estudante){
-    printf("%d\n", (*estudante).mat);
-    printf("digite o nome do estudante\n");
-    scanf("%[^\n]", (*estudante).nome);
-    printf("digite a idade do estudante\n");
-    scanf("%d", &(*estudante).idade);
-    printf("digite a matricula do estudante\n");
-    scanf("%d", &(*estudante).mat);
-    printf("digite o email do estudante\n");
-    scanf(" %[^\n]", (*estudante).email);
+void preencher(SVpublico *Leandros){
+    printf("digite o nome\n");
+    scanf("%[^\n]", (*Leandros).nome);
+    printf("digite a idade\n");
+    scanf("%d", &(*Leandros).idade);
+    printf("digite a funcao\n");
+    scanf(" %[^\n]", (*Leandros).funcao);
+    printf("digite o RG\n");
+    scanf("%d", &(*Leandros).RG);
 }
-void imprimir(struct aluno *estudante){
-    printf(" nome: %s\n idade: %d\n matricula: %d\n email: %s\n", (*estudante).nome, (*estudante).idade, (*estudante).mat, (*estudante).email );
+void imprimir(SVpublico *Leandros){
+    printf(" nome: %s\n idade: %d\n RG: %d\n Funcao: %s\n", (*Leandros).nome, (*Leandros).idade, (*Leandros).RG, (*Leandros).funcao );
 }
