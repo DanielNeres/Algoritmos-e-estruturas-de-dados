@@ -4,35 +4,35 @@ struct professor{
 char nome[20];
 int idade;
 char formacao[40];
-int disciplina;
+char disciplina[60];
 char email_institucional[50];
 };
-void preencher(struct professor *estudante);
-void imprimir(struct professor *estudante);
+void preencher(struct professor *profs);
+void imprimir(struct professor *profs);
 
 int main(){
-    struct professor * estudante = (struct professor*) malloc(sizeof(struct professor));
-    if(estudante == NULL){
+    struct professor * profs = (struct professor*) malloc(sizeof(struct professor));
+    if(profs == NULL){
         exit(1);
     }
-    preencher(estudante);
-    imprimir(estudante);
-    free(estudante);
+    preencher(profs);
+    imprimir(profs);
+    free(profs);
     return 0;
 }
 
-void preencher(struct professor *estudante){
+void preencher(struct professor *profs){
     printf("digite a formacao\n");
-    scanf("%d\n", (*estudante).formacao);
+    scanf(" %[^\n]", (*profs).formacao);
     printf("digite o nome\n");
-    scanf("%[^\n]", (*estudante).nome);
-    printf("digite a idade do\n");
-    scanf("%d", &(*estudante).idade);
+    scanf(" %[^\n]", (*profs).nome);
+    printf("digite a idade\n");
+    scanf("%d", &(*profs).idade);
     printf("digite a disciplina\n");
-    scanf("%d", &(*estudante).disciplina);
+    scanf(" %[^\n]", &(*profs).disciplina);
     printf("digite o email\n");
-    scanf(" %[^\n]", (*estudante).email_institucional);
+    scanf(" %[^\n]", (*profs).email_institucional);
 }
-void imprimir(struct professor *estudante){
-    printf(" nome: %s\n idade: %d\n disciplina: %d\n email_institucional: %s\n formacao: %s", (*estudante).nome, (*estudante).idade, (*estudante).disciplina, (*estudante).email_institucional, (*estudante).formacao);
+void imprimir(struct professor *profs){
+    printf(" nome: %s\n idade: %d\n disciplina: %s\n email_institucional: %s\n formacao: %s", (*profs).nome, (*profs).idade, (*profs).disciplina, (*profs).email_institucional, (*profs).formacao);
 }
