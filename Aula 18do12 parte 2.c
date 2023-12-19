@@ -18,7 +18,8 @@ typedef struct aluno{
 
 int main(void){
     // criação da variavel ponteiro vetor aluno
-    Aluno *aluno = (Aluno*) malloc(sizeof(Aluno)); 
+    Aluno *aluno = (Aluno*) malloc(sizeof(Aluno));
+    int i;
     if(aluno == NULL){
         exit(1);
     }
@@ -51,6 +52,8 @@ int main(void){
         aluno->materias[index].codigo);
     }
 
+    free(aluno->materias);
+    free(aluno);
 
     return 0;
 }
